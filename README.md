@@ -53,8 +53,27 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na test in 2<sup>e</sup> werkgroep</summary>
 
+  Spelen met screenreader:
+  Het was enorm ingewikkeld om te leren werken met screenreaders, na even te hebben geoefend kwam ik tot de conclusie dat mijn website erg goed in gebruik was met een screenreader. Alles was duidelijk aangegeven en BIJNA alle plaatjes (dus niet in de list items) hadden alternatieve tekst waardoor je echt wist hoe de website er beetje uit zag. Echter mochten deze teksten wel wat duidelijk zodat je echt een beeld zou kunnen vormen bij de foto. Verder kon je makkelijk navigeren door de gehele website doormiddel van skiplinks en het duidelijk aangeven waar je op dit dat moment je bevond.
+
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  <li> De website was makkelijk te bedienen na een beetje oefenen. </li>
+  <li> Goede duidelijke beschrijvingen </li>
+  <li> Goed aangegeven buttons </li>
+  <li> Er werd duidelijk aangegeven wat een link was en wat een foto was etc. </li>
+  <li> Over het algemeen een "simpele" website met niet veel dingen die missen, goed compleet dus (bijna) </li>
+
+  WCAG checklist:
+  <img src="images/WCAG_pagina_1.png" alt="WCAG pagina 1">
+  <img src="images/WCAG_pagina_2.png" alt="WCAG pagina 2">
+  <img src="images/WCAG_pagina_3.png" alt="WCAG pagina 3">
+  <img src="images/WCAG_pagina_4.png" alt="WCAG pagina 4">
+  <img src="images/WCAG_pagina_5.png" alt="WCAG pagina 5">
+
+
+
+
 
 </details>
 
