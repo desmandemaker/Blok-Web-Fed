@@ -1,13 +1,22 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
 }
 
 
-
-
+main section h2:first-child, main section ul:nth-of-type(2) li a span{
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 0.1em;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 0.1em;
+}
 
 
 /*********************/
@@ -15,8 +24,8 @@
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text: #111;
+	--color-background: #eee;
 }
 
 
@@ -27,201 +36,423 @@
 /* JOUW STYLING */
 /****************/
 
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+* {
+	padding: 0;
+	box-sizing: border-box;
 	/* Hiermee zorg ik ervoor dat de totale breedte en hoogte van een element inclusief padding en rand is, in plaats van exclusief. */
 
 }
 
 
+
 header {
-    background-color: white;
-    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
-	position: fixed; /* De header krijgt een vaste positie bovenaan het scherm */
-  	top: 0; /* Plaats de header aan de bovenkant van het scherm */
-  	left: 0; /* Plaats de header aan de linkerkant van het scherm */
-	width: 100%; /* De header strekt zich uit over de volledige breedte van het scherm */
-	z-index: 1000; /* Z-index met een hoge waarde om boven de rest van de inhoud te liggen */
+	background-color: white;
+	box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
+	position: fixed;
+	/* De header krijgt een vaste positie bovenaan het scherm */
+	top: 0;
+	/* Plaats de header aan de bovenkant van het scherm */
+	left: 0;
+	/* Plaats de header aan de linkerkant van het scherm */
+	width: 100%;
+	/* De header strekt zich uit over de volledige breedte van het scherm */
+	z-index: 1000;
+	/* Z-index met een hoge waarde om boven de rest van de inhoud te liggen */
+
 
 }
 
-li{
-    list-style: none; /* Verwijdert de standaard opsommingstekens van lijstitems. */
+li {
+	list-style: none;
+	/* Verwijdert de standaard opsommingstekens van lijstitems. */
 }
 
 
 
 
 
-header nav img{
-	max-width: 3em;	
+header nav img {
+	max-width: 3em;
 	margin-right: 1em;
 }
 
-.navbar{
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-	
+header nav {
+	display: flex;
+	align-items: center;
+
 }
 
 
-.nav-link{
-	transition: 0.7s ease;
-}
 
 
-header nav button{
-	display: none; /* Verbergt het hamburgermenu op standaard (niet weergegeven). */
+
+header nav button {
+	display: none;
+	/* Verbergt het hamburgermenu op standaard (niet weergegeven). */
 	cursor: pointer;
 }
 
-button{
+button {
 	background: none;
 	border: none;
 }
 
-.bar{
-	display: block; /* Geeft balken in het hamburgermenu weer als blokelementen (in plaats van lijn). */
-	width: 25px;/* Stelt de breedte in van de balken in het hamburgermenu. */
-    height: 2px; /* Stelt de hoogte in van de balken in het hamburgermenu. */
-	margin: 6px auto;
+header nav button span{
+	display: block;
+	/* Geeft balken in het hamburgermenu weer als blokelementen (in plaats van lijn). */
+	width: 2em;
+	/* Stelt de breedte in van de balken in het hamburgermenu. */
+	height: 0.15em;
+	/* Stelt de hoogte in van de balken in het hamburgermenu. */
+	margin: 0.45em auto;
 	-webkit-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	background-color: black;
 }
-.line{
-	display: block; /* Geeft balken in het hamburgermenu weer als blokelementen (in plaats van lijn). */
-	width: 16em;
-    height: 1px; /* Stelt de hoogte in van de balken in het hamburgermenu. */
-	margin: auto ;
+
+header nav ul li:nth-of-type(5), header nav ul li:nth-of-type(11), header nav ul li:last-of-type {
+	display: block;
+	/* Geeft balken in het hamburgermenu weer als blokelementen (in plaats van lijn). */
+	width: 19em;
+	height: 0.1em;
+	/* Stelt de hoogte in van de balken in het hamburgermenu. */
+	margin: auto;
 	background-color: lightgrey;
 
 }
 
-@media (min-width: 768px){
-	.nav-menu {
-		display: flex; 
-	  }
+@media (min-width: 768px) {
+	footer ul li.active div{
+		display: block;
+	}
 
-	header nav ul span{
+
+	main {
+		margin: 3em;
+
+	}
+
+
+	main div:first-of-type {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		/* Automatisch passende kolommen */
+		grid-auto-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: 12em;
+	}
+
+
+	main div:nth-of-type(2) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		/* 3 kolommen in de eerste rij */
+		grid-auto-columns: 1fr;
+		/* Optioneel: ruimte tussen grid-items */
+		justify-content: left;
+		width: 100%;
+		padding: 0;
+
+	}
+
+	main div:nth-of-type(2) article:first-child {
+		grid-column: 1;
+		grid-column: span 1;
+
+	}
+
+	main div:nth-of-type(2) article:nth-child(2) {
+		grid-column: 2;
+		grid-column: span 1;
+	}
+
+	main div:first-of-type section:first-child,
+	main div:first-of-type section:nth-of-type(2),
+	main div:first-of-type section:nth-of-type(3) {
+		grid-row: 1;
+		grid-column: span 2;
+
+
+
+
+		/* Op de bovenste rij */
+
+	}
+
+	main div:first-of-type section:nth-of-type(4),
+	main div:first-of-type section:last-of-type {
+		grid-row: 2;
+		/* Op de onderste rij */
+		grid-column: span 3;
+		/* Elk item beslaat 3 kolommen */
+	}
+
+	header nav ul li:nth-of-type(5),header nav ul li:nth-of-type(11), header nav ul li:last-of-type {
 		display: none;
 	}
+
+
+
+	main div article:first-of-type {
+		margin-right: 2em;
+
+
+	}
+
+	body main.app_pagina h1 {
+		font-size: 4em;
+		width: 100%;
+	}
+
+	body main.app_pagina h2 {
+		font-size: 2em;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0.5em;
+	}
+
+
+	header nav ul {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		/* 5 items in de bovenste rij */
+		grid-template-rows: auto auto;
+		/* 2 rijen, automatische hoogte voor beide rijen */
+		gap: 1em;
+		/* Spacing tussen grid-items */
+		padding: 0;
+		/* Verwijder standaard lijstpadding */
+		height: 8em;
+		align-items: center;
+		width: 50%;
+
+	}
+
+	nav li {
+		width: 8em;
+		padding: 0;
+		display: flex;
+		align-items: start;
+	}
+
+	header nav ul>li:first-child,
+	header nav ul>li:nth-child(2),
+	header nav ul>li:nth-child(3),
+	header nav ul>li:nth-child(4),
+	header nav ul>li:nth-child(13),
+	header nav ul>li:nth-child(14) {
+		grid-column: span 1;
+		/* Elke item beslaat 1 kolom */
+		grid-row: 1;
+		/* Op de bovenste rij */
+	}
+
+	header nav ul>li:nth-child(6),
+	header nav ul>li:nth-child(7),
+	header nav ul>li:nth-child(8),
+	header nav ul>li:nth-child(9),
+	header nav ul>li:nth-child(10),
+	header nav ul>li:nth-child(11) {
+		grid-column: span 1;
+		/* Elke item beslaat 1 kolom */
+		grid-row: 2;
+		/* Op de onderste rij */
+	}
+
+
+	/* Positioneer de overige items in de onderste rij */
+
+	header nav ul>li:nth-child(5),
+	header nav ul>li:nth-child(6) {
+		grid-row: 2;
+		grid-column: 2;
+		/* In de onderste rij */
+	}
+
+
 }
 
-@media(max-width:768px){
-	header nav button{
-		display: block; /* Toont het hamburgermenu wanneer het scherm smaller is dan 768px. */
+
+
+@media(max-width:768px) {
+
+	main div:first-of-type img {
+		width: 100%;
 
 	}
-	header nav button.active .bar:nth-child(2){
-		opacity: 0; /* Verbergt de tweede balk in het actieve hamburgermenu. Zodat het een kruisje wordt
+
+	header nav button {
+		display: block;
+		/* Toont het hamburgermenu wanneer het scherm smaller is dan 768px. */
+
+	}
+
+	header nav button.active span:nth-child(2) {
+		opacity: 0;
+		/* Verbergt de tweede balk in het actieve hamburgermenu. Zodat het een kruisje wordt
 		in plaats van een sterretje*/
 	}
-	header nav button.active .bar:nth-child(1){
-		transform: translateY(8px) rotate(45deg); 
-	} /* Transformeert de eerste balk in het actieve hamburgermenu om een kruis te vormen. */
 
-	header nav button.active .bar:nth-child(3){
+	header nav button.active span:first-child {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	/* Transformeert de eerste balk in het actieve hamburgermenu om een kruis te vormen. */
+
+	header nav button.active span:last-child {
 		transform: translateY(-8px) rotate(-45deg);
 		/* Transformeert de derde balk in het actieve hamburgermenu om een kruis te vormen. */
 	}
 
-	header ul{
+	header ul {
 		padding-bottom: 100%;
 	}
 
-	.nav-menu {
-        position: fixed; /* Maakt het navigatiemenu vast aan de bovenkant van het scherm. */
-        left: -100%; /* Plaatst het menu buiten het zichtbare scherm aan de linkerkant. */
-        top: 70px; /* Stelt de afstand vanaf de bovenkant van het scherm in voor het uitgeklapte menu. */
-        gap: 0; /* Verwijdert de spatie tussen menu-items. */
-        flex-direction: column; /* Plaatst menu-items onder elkaar in kolommen. */
-        background-color: white; /* Stelt de achtergrondkleur in voor het uitgeklapte menu. */
-        width: 100%; /* Maakt het menu zo breed als het scherm. */
-        transition: 0.3s;  /* Voegt een vloeiende overgang toe aan het uitklappen van het menu. */
-    }
-
-	.nav-item{
-		margin: 16px 0; /* hierbij wordt er een verticale margin toegevoegd bij de menu items */
+	header nav ul {
+		position: fixed;
+		/* Maakt het navigatiemenu vast aan de bovenkant van het scherm. */
+		left: -100%;
+		/* Plaatst het menu buiten het zichtbare scherm aan de linkerkant. */
+		top: 4em;
+		/* Stelt de afstand vanaf de bovenkant van het scherm in voor het uitgeklapte menu. */
+		gap: 0;
+		/* Verwijdert de spatie tussen menu-items. */
+		flex-direction: column;
+		/* Plaatst menu-items onder elkaar in kolommen. */
+		background-color: white;
+		/* Stelt de achtergrondkleur in voor het uitgeklapte menu. */
+		width: 100%;
+		/* Maakt het menu zo breed als het scherm. */
+		transition: 0.3s;
+		/* Voegt een vloeiende overgang toe aan het uitklappen van het menu. */
 	}
 
-	.nav-menu.active{
-		left: 0; /* hierbij wordt het menu naar links en weer die kant op terug geschoven bij active status*/
+	
+
+	header nav ul.active {
+		left: 0;
+		/* hierbij wordt het menu naar links en weer die kant op terug geschoven bij active status*/
+	}
+
+
+	footer ul li div{
+		display: none;
+	}
+
+	/* Verberg de dropdown-inhoud standaard */
+	footer ul li div{
+		display: none;
+	}
+
+	/* Stijl voor het actieve dropdownmenu */
+	footer ul li.active div{
+		display: block;
+	}
+
+	/* Voeg stijlen toe aan de plusjes (of een ander pictogram naar keuze) */
+	footer ul li img {
+		width: 2em;
+		height:auto;
+		margin-left: 2em;
+		cursor: pointer;
+	}
+
+	header nav ul li:first-of-type,header nav ul li:nth-of-type(2),header nav ul li:nth-of-type(3),header nav ul li:nth-of-type(4),header nav ul li:nth-of-type(12),header nav ul li:nth-of-type(13){
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: smaller;
+		line-height: 2em;	
 	}
 
 }
 
 
-.nav-menu li{
+header nav ul li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: smaller;
 	margin-left: 6em;
 	line-height: 2em;
+	margin: 1em 0 1em 6em;
+
 }
 
+header nav ul li a{
+	transition: 0.7s ease;
 
-main{
-	margin-top: 80px;
+
+}
+
+main {
+	margin-top: 5em;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-main section img{
-	margin-left: 1em;
-	margin-top: 3em;
-	max-width: 90%; /* Hiermee wordt de maximale breedte van de afbeelding ingesteld op 100% van de beschikbare ruimte. */
-	height: auto; /* Hiermee wordt de hoogte automatisch aangepast om de juiste verhoudingen te behouden. */
-}
 
-main section h2{
+
+main section h2 {
 	margin: 1em;
 	color: #293133;
-	font-weight: 400;
+	
 }
-main section p{
+
+main div:first-of-type >section:first-of-type p,
+main section:nth-of-type(2) p,
+main section:nth-of-type(3) p,
+main section:nth-of-type(4) p,
+main section:nth-of-type(5) p {
 	margin: 1.5em;
 	padding-bottom: 2em;
 	color: #293133;
 	font-size: medium;
-    line-height: 24px;
+	line-height: 2em;
 }
 
-main section a{
+main div:first-of-type >section:first-child a,
+/* Hier heb ik gekozen om toch gebruik te maken van een DIV omdat het op een of andere manier niet lukte om de 2 seciton aan te spreken zodner dat de eerste er ook naar luisterde, heel irritant. */
+
+main section:nth-of-type(2) a,
+main section:nth-of-type(3) a,
+main section:nth-of-type(4) a,
+main section:nth-of-type(5) a {
 	color: #293133;
 	padding: .8125rem 1.5625rem;
 	margin: 1.5em;
 	background-color: #ffbc0d;
 	border-radius: 6px;
+	
 }
-main section{
+
+
+
+main section {
 	margin-bottom: 4em;
 }
 
 
-main article img{
-	max-width: 100%; /* Hiermee wordt de maximale breedte van de afbeelding ingesteld op 100% van de beschikbare ruimte. */
-	height: auto; /* Hiermee wordt de hoogte automatisch aangepast om de juiste verhoudingen te behouden. */
+main article img {
+	max-width: 100%;
+	/* Hiermee wordt de maximale breedte van de afbeelding ingesteld op 100% van de beschikbare ruimte. */
+	height: auto;
+	/* Hiermee wordt de hoogte automatisch aangepast om de juiste verhoudingen te behouden. */
 }
 
-main article h2{
+main article h2 {
 	margin-top: 1em;
 	margin-left: 0.5em;
 	color: #293133;
 	font-weight: bold;
 	font-size: 2em;
 }
-main article p{
+
+main article p {
 	margin: 1.5em;
 	padding-bottom: 2em;
 	color: #293133;
 	font-size: small;
-    line-height: 24px;
+	line-height: 2em;
 }
 
-main article a{
+main article a {
 	font-size: small;
 	color: #293133;
 	padding: .8125rem 1.5625rem;
@@ -230,64 +461,67 @@ main article a{
 	border-radius: 4px;
 }
 
-main article{
+main article {
 	border: solid;
 	margin: 1em;
 	padding-bottom: 2em;
 	border-radius: 4px;
 	border-color: darkgrey;
-	
+
 }
 
 
-header ul li:nth-child(6), header ul li:nth-child(7), header ul li:nth-child(8), header ul li:nth-child(9), header ul li:nth-child(10){
-	font-size: 14px;
+header ul li:nth-child(6),
+header ul li:nth-child(7),
+header ul li:nth-child(8),
+header ul li:nth-child(9),
+header ul li:nth-child(10) {
 	line-height: 2.8em;
-	margin-left: 75px;
+	margin-left: 6em;
 }
 
 
-a{
-    color: #293133;
-	letter-spacing: -.15px;
+a {
+	color: #293133;
 	line-height: 1.2em;
-    text-decoration: none; /* Verwijdert de onderstreping van links. */
+	text-decoration: none;
+	/* Verwijdert de onderstreping van links. */
 }
 
-header nav ul li:nth-of-type(13) a{
-	color:#006bae;
-	text-decoration: underline; 
-	
+header nav ul li:nth-of-type(13) a {
+	color: #006bae;
+	text-decoration: underline;
+
 }
 
-header ul li img{
-	max-width: 15px;
+header ul li img {
+	max-width: 15%;
 	height: auto;
 }
 
-header ul li:nth-child(6), header ul li:nth-child(12), header ul li:nth-child(13){
+header ul li:nth-child(6),
+header ul li:nth-child(12),
+header ul li:nth-child(13) {
 	display: flex;
 	justify-content: space-between;
-	padding-bottom: 8px;
-	padding-top: 8px;
 
 }
 
-footer ul li{
+footer ul li {
 	display: flex;
 	justify-content: space-between;
 	margin: 2em;
 }
 
-footer{
+footer {
 	font-family: Arial, Helvetica, sans-serif;
 	color: #293133;
-	
+
 }
 
 
-footer ul li img{
-	max-width: 20px;
+footer ul li img {
+	max-width: 1em;
 }
 
 footer section {
@@ -295,26 +529,29 @@ footer section {
 	justify-content: center;
 }
 
-footer section a{
+footer section a {
 	padding: 1em;
 }
-footer span{
-	display: block; /* Geeft balken in het hamburgermenu weer als blokelementen (in plaats van lijn). */
+
+footer span {
+	display: block;
+	/* Geeft balken in het hamburgermenu weer als blokelementen (in plaats van lijn). */
 	width: 100%;
-    height: 1px; /* Stelt de hoogte in van de balken in het hamburgermenu. */
+	height: 0.1em;
+	/* Stelt de hoogte in van de balken in het hamburgermenu. */
 	background-color: lightgrey;
 	margin: 3em 0 1.5em 0;
 }
 
 
 
-footer > span + section{
+footer>span+section {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 }
 
-footer > span + section a {
+footer>span+section a {
 	grid-column: 1;
 	grid-row-start: 2;
 	justify-self: end;
@@ -323,30 +560,32 @@ footer > span + section a {
 	font-size: small;
 }
 
-footer > span + section a:first-of-type {
+footer>span+section a:first-of-type {
 	grid-row-start: 1;
 	grid-column-start: 1;
 	grid-column-end: -1;
 	justify-self: center;
-	
+
 
 }
-footer > span + section a:last-of-type {
+
+footer>span+section a:last-of-type {
 	grid-row-start: 2;
 	grid-column: 2;
 	justify-self: start;
 
 }
 
-footer p{
+footer p {
 	margin: 1em 0 3em 0;
 	font-size: x-small;
 }
 
-footer section:nth-of-type(3) img{
-	height: 30px;
+footer section:nth-of-type(3) img {
+	height: 2em;
 	margin-right: 0.5em;
 }
+
 
 
 /* 
@@ -400,3 +639,173 @@ footer section:nth-of-type(3) img{
     margin: 0 5px;
     cursor: pointer; */
 
+
+/* Algemene stijlen voor de slider-container */
+main section:first-of-type {
+	width: 100%;
+}
+
+/* Stijlen voor de container van de slides */
+main section:first-of-type ul {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	list-style: none;
+	padding: 5em 0em 1em 0em;
+	width: 100%;
+}
+
+/* Stijlen voor individuele slides */
+main section:first-of-type ul li {
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	width: 100%;
+	height: 20%;
+	border-radius: 10px;
+	transform-origin: center center;
+	transform: scale(1);
+	transition: transform 0.5s;
+	display: flex;
+	font-size: smaller;
+	flex-direction: column;
+	border-radius: 5px;
+}
+
+main section:first-of-type ul li h1 {
+	font-weight: bold;
+	font-size: 2em;
+	margin: 0.5em 1em 0.5em 0.5em
+}
+
+/* Stijlen voor de afbeelding binnen de slides */
+main section:first-of-type ul li img {
+	width: 100%;
+}
+
+main section:first-of-type ul li a {
+	background-color: #ffbc0d;
+	width: 10em;
+	border-radius: 4px;
+	padding: 9pt 13px;
+	line-height: 24px;
+	color: #292929;
+	margin: 0 0 2em 1em;
+}
+
+main section:first-of-type ul li p {
+	margin: 0 1.5em 2em 1.5em;
+	color: #293133;
+	font-size: small;
+}
+
+/* Stijlen voor de navigatieknoppen binnen de slider */
+main section:first-of-type ul:nth-of-type(2) {
+	width: 100%;
+	padding-left: 0;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	gap: 2.5em;
+	padding-top: 1em;
+	padding-left: 1em;
+}
+
+main section:first-of-type ul:nth-of-type(2) li {
+	max-width: 2em;
+	list-style: none;
+	margin: 0;
+	padding: 0 !important;
+}
+
+main section:first-of-type ul:nth-of-type(2) li a {
+	display: block;
+	max-width: 2em;
+	max-height: 2em;
+	width: 2em;
+	height:auto;
+	background-color: #eee;
+	text-decoration: none;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	
+
+}
+
+
+
+
+
+
+
+/* Stijl voor de dropdown-content (onzichtbaar op grotere schermen) */
+footer ul li div {
+	display: none;
+	background-color: #f9f9f9;
+	z-index: 1;
+}
+
+/* Stijl voor de linkjes in de dropdown */
+footer ul li div a {
+	padding: 1em 2em;
+	text-decoration: none;
+	display: block;
+	color: #333;
+}
+
+
+
+
+
+
+main.app_pagina article a {
+	text-decoration: underline;
+	padding: 0;
+	background-color: white;
+	color: #006bae;
+}
+
+main.app_pagina article {
+	margin: 3em 0 3em 0;
+}
+
+main.app_pagina h3 {
+	margin: 1em 0 0 .8em;
+	font-size: x-large;
+
+}
+
+main.app_pagina h2 {
+	font-size: x-large;
+	display: flex;
+	width: 10em;
+	margin-bottom: 1.5em;
+}
+
+main.app_pagina h1 {
+	font-size: xx-large;
+	width: 10em;
+	margin-top: 3em;
+	margin-bottom: 1em;
+}
+
+main.app_pagina p {
+	width: 85%;
+	color: #293133;
+	line-height: 1.5em;
+}
+
+main.app_pagina img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 3em;
+}
+
+
+
+.app_pagina h1,
+.app_pagina h2,
+main.app_pagina p:first-of-type {
+	margin: 0 auto;
+	text-align: center;
+}
